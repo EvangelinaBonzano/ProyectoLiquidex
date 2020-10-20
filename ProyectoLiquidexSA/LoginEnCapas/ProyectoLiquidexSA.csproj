@@ -48,7 +48,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -67,6 +87,7 @@
     <Compile Include="BusinessLayer\EstadosAsistenciaService.cs" />
     <Compile Include="BusinessLayer\EstadoService.cs" />
     <Compile Include="BusinessLayer\PerfilService.cs" />
+    <Compile Include="BusinessLayer\SueldoPerfilHistoricoService.cs" />
     <Compile Include="BusinessLayer\SueldoService.cs" />
     <Compile Include="DataAccessLayer\SueldoDao.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
@@ -78,7 +99,52 @@
     <Compile Include="DataAccessLayer\EstadoDao.cs" />
     <Compile Include="DataAccessLayer\EstadosAsistenciaDao.cs" />
     <Compile Include="DataAccessLayer\PerfilDao.cs" />
+    <Compile Include="DataAccessLayer\SueldoPerfilHistoricoDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
+    <Compile Include="DatosEstadisticaAsistencia.cs">
+      <DependentUpon>DatosEstadisticaAsistencia.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticaAsistencia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticaAsistencia.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticaSueldoAsignaciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticaSueldoAsignaciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticaSueldosDescuento.cs">
+      <DependentUpon>DatosEstadisticaSueldosDescuento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosEstadisticaSueldosDescuento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticaSueldosDescuento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosReporteAsistencia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosReporteAsistencia.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosReporteDescuentosSueldo.cs">
+      <DependentUpon>DatosReporteDescuentosSueldo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosReporteDescuentosSueldo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosReporteDescuentosSueldo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosReporteSueldoAsignaciones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosReporteSueldoAsignaciones.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatosReporteUsuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosReporteUsuarios.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Asignacion.cs" />
     <Compile Include="Entities\AsistenciaUsuarios.cs" />
     <Compile Include="Entities\Descuento.cs" />
@@ -87,8 +153,17 @@
     <Compile Include="Entities\Perfil.cs" />
     <Compile Include="Entities\SueldoAsignaciones.cs" />
     <Compile Include="Entities\SueldoDescuentos.cs" />
+    <Compile Include="Entities\SueldoPerfilHistorico.cs" />
     <Compile Include="Entities\Sueldos.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="EstadisticaUsuarios.cs">
+      <DependentUpon>EstadisticaUsuarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EstadisticaUsuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadisticaUsuarios.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Asignaciones\frmABMAsignaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +212,66 @@
     <Compile Include="GUILayer\frmPrincipal.designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Perfiles\frmABMPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Perfiles\frmABMPerfil.Designer.cs">
+      <DependentUpon>frmABMPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Perfiles\frmPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Perfiles\frmPerfiles.Designer.cs">
+      <DependentUpon>frmPerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\EstadisticaAsistencia\frmEstadisticaAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\EstadisticaAsistencia\frmEstadisticaAsistencia.Designer.cs">
+      <DependentUpon>frmEstadisticaAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\EstadisticaDescuentosSueldo\frmEstadisticaSueldosDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\EstadisticaDescuentosSueldo\frmEstadisticaSueldosDescuento.Designer.cs">
+      <DependentUpon>frmEstadisticaSueldosDescuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\EstadisticaSueldoAsignaciones\frmEstadisticaSueldoAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\EstadisticaSueldoAsignaciones\frmEstadisticaSueldoAsignaciones.Designer.cs">
+      <DependentUpon>frmEstadisticaSueldoAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\EstadisticaUsuarios\frmEstadisticaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\EstadisticaUsuarios\frmEstadisticaUsuarios.Designer.cs">
+      <DependentUpon>frmEstadisticaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteAsistencia\frmReporteListadoAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteAsistencia\frmReporteListadoAsistencia.Designer.cs">
+      <DependentUpon>frmReporteListadoAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteDescuentosSueldo\frmReporteDescuentosSueldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteDescuentosSueldo\frmReporteDescuentosSueldo.Designer.cs">
+      <DependentUpon>frmReporteDescuentosSueldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteSueldoAsignaciones\frmReporteSueldoAsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteSueldoAsignaciones\frmReporteSueldoAsignaciones.Designer.cs">
+      <DependentUpon>frmReporteSueldoAsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteUsuarios\frmReporteUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteUsuarios\frmReporteUsuarios.Designer.cs">
+      <DependentUpon>frmReporteUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Sueldos\frmSueldos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +292,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="GUILayer\Asignaciones\frmABMAsignaciones.resx">
       <DependentUpon>frmABMAsignaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +317,44 @@
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Perfiles\frmABMPerfil.resx">
+      <DependentUpon>frmABMPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Perfiles\frmPerfiles.resx">
+      <DependentUpon>frmPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\EstadisticaAsistencia\EstadisticaAsistencia.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\EstadisticaAsistencia\frmEstadisticaAsistencia.resx">
+      <DependentUpon>frmEstadisticaAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\EstadisticaDescuentosSueldo\EstadisticaDescuentosSueldo.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\EstadisticaDescuentosSueldo\frmEstadisticaSueldosDescuento.resx">
+      <DependentUpon>frmEstadisticaSueldosDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\EstadisticaSueldoAsignaciones\EstadisticaSueldoAsignaciones.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\EstadisticaSueldoAsignaciones\frmEstadisticaSueldoAsignaciones.resx">
+      <DependentUpon>frmEstadisticaSueldoAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\EstadisticaUsuarios\EstadisticaUsuarios.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\EstadisticaUsuarios\frmEstadisticaUsuarios.resx">
+      <DependentUpon>frmEstadisticaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\ReporteDescuentosSueldo\frmReporteDescuentosSueldo.resx">
+      <DependentUpon>frmReporteDescuentosSueldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\ReporteDescuentosSueldo\ReporteDescuentosSueldo.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\ReporteAsistencia\frmReporteListadoAsistencia.resx">
+      <DependentUpon>frmReporteListadoAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\ReporteAsistencia\ReporteListadoAsistencia.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\ReporteSueldoAsignaciones\frmReporteSueldoAsignaciones.resx">
+      <DependentUpon>frmReporteSueldoAsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\ReporteSueldoAsignaciones\ReporteSueldoAsignaciones.rdlc" />
+    <EmbeddedResource Include="GUILayer\Reportes\ReporteUsuarios\frmReporteUsuarios.resx">
+      <DependentUpon>frmReporteUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\ReporteUsuarios\ReporteUsuarios.rdlc" />
     <EmbeddedResource Include="GUILayer\Sueldos\frmSueldos.resx">
       <DependentUpon>frmSueldos.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +374,95 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DatosEstadisticaAsistencia.xsc">
+      <DependentUpon>DatosEstadisticaAsistencia.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticaAsistencia.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticaAsistencia.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosEstadisticaAsistencia.xss">
+      <DependentUpon>DatosEstadisticaAsistencia.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticaSueldoAsignaciones.xsc">
+      <DependentUpon>DatosEstadisticaSueldoAsignaciones.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticaSueldoAsignaciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticaSueldoAsignaciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosEstadisticaSueldoAsignaciones.xss">
+      <DependentUpon>DatosEstadisticaSueldoAsignaciones.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticaSueldosDescuento.xsc">
+      <DependentUpon>DatosEstadisticaSueldosDescuento.xsd</DependentUpon>
+    </None>
+    <None Include="DatosEstadisticaSueldosDescuento.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticaSueldosDescuento.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosEstadisticaSueldosDescuento.xss">
+      <DependentUpon>DatosEstadisticaSueldosDescuento.xsd</DependentUpon>
+    </None>
+    <None Include="DatosReporteAsistencia.xsc">
+      <DependentUpon>DatosReporteAsistencia.xsd</DependentUpon>
+    </None>
+    <None Include="DatosReporteAsistencia.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosReporteAsistencia.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosReporteAsistencia.xss">
+      <DependentUpon>DatosReporteAsistencia.xsd</DependentUpon>
+    </None>
+    <None Include="DatosReporteDescuentosSueldo.xsc">
+      <DependentUpon>DatosReporteDescuentosSueldo.xsd</DependentUpon>
+    </None>
+    <None Include="DatosReporteDescuentosSueldo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosReporteDescuentosSueldo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosReporteDescuentosSueldo.xss">
+      <DependentUpon>DatosReporteDescuentosSueldo.xsd</DependentUpon>
+    </None>
+    <None Include="DatosReporteSueldoAsignaciones.xsc">
+      <DependentUpon>DatosReporteSueldoAsignaciones.xsd</DependentUpon>
+    </None>
+    <None Include="DatosReporteSueldoAsignaciones.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosReporteSueldoAsignaciones.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosReporteSueldoAsignaciones.xss">
+      <DependentUpon>DatosReporteSueldoAsignaciones.xsd</DependentUpon>
+    </None>
+    <None Include="DatosReporteUsuarios.xsc">
+      <DependentUpon>DatosReporteUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DatosReporteUsuarios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosReporteUsuarios.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosReporteUsuarios.xss">
+      <DependentUpon>DatosReporteUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="EstadisticaUsuarios.xsc">
+      <DependentUpon>EstadisticaUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="EstadisticaUsuarios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstadisticaUsuarios.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="EstadisticaUsuarios.xss">
+      <DependentUpon>EstadisticaUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -229,6 +492,19 @@
     <Content Include="Resources\test.png" />
     <Content Include="Resources\user.jpg" />
     <Content Include="Resources\user_log.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

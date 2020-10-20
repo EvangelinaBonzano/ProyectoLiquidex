@@ -15,9 +15,9 @@ namespace ProyectoLiquidexSA.Entities
         public string Nombre { get => nombre; set => nombre = value; }
         public bool Borrado { get => borrado; set => borrado = value; }
 
-        public override string ToString()
-        {
-            return Nombre;
-        }
+        //public override string ToString()
+        //{
+        //    return Nombre;
+        //}
     }
 }

@@ -316,6 +316,7 @@ namespace ProyectoLiquidexSA.DataAccessLayer
             return true;
         }
 
+        
         private AsistenciaUsuarios ObjectMapping(DataRow row)
         {
             AsistenciaUsuarios oAsistencia = new AsistenciaUsuarios

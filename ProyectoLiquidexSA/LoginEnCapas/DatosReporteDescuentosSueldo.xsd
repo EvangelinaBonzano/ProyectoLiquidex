@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatosReporteDescuentosSueldo" targetNamespace="http://tempuri.org/DatosReporteDescuentosSueldo.xsd" xmlns:mstns="http://tempuri.org/DatosReporteDescuentosSueldo.xsd" xmlns="http://tempuri.org/DatosReporteDescuentosSueldo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_A6901C_LiquidexSAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_A6901C_LiquidexSAConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ProyectoLiquidexSA.Properties.Settings.GlobalReference.Default.DB_A6901C_LiquidexSAConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DTDescuentosSueldoTableAdapter" GeneratorDataComponentClassName="DTDescuentosSueldoTableAdapter" Name="DTDescuentosSueldo" UserDataComponentName="DTDescuentosSueldoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DB_A6901C_LiquidexSAConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SueldoDescuentos.fecha, Usuarios.usuario, Descuentos.n_descuento, SueldoDescuentos.cantidad, SueldoDescuentos.monto
+FROM            SueldoDescuentos INNER JOIN
+                         Descuentos ON SueldoDescuentos.id_descuento = Descuentos.id_descuento INNER JOIN
+                         Usuarios ON SueldoDescuentos.id_usuario = Usuarios.id_usuario</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="usuario" DataSetColumn="usuario" />
+              <Mapping SourceColumn="n_descuento" DataSetColumn="n_descuento" />
+              <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
+              <Mapping SourceColumn="monto" DataSetColumn="monto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DatosReporteDescuentosSueldo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosReporteDescuentosSueldo" msprop:Generator_UserDSName="DatosReporteDescuentosSueldo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTDescuentosSueldo" msprop:Generator_TableClassName="DTDescuentosSueldoDataTable" msprop:Generator_TableVarName="tableDTDescuentosSueldo" msprop:Generator_TablePropName="DTDescuentosSueldo" msprop:Generator_RowDeletingName="DTDescuentosSueldoRowDeleting" msprop:Generator_RowChangingName="DTDescuentosSueldoRowChanging" msprop:Generator_RowEvHandlerName="DTDescuentosSueldoRowChangeEventHandler" msprop:Generator_RowDeletedName="DTDescuentosSueldoRowDeleted" msprop:Generator_UserTableName="DTDescuentosSueldo" msprop:Generator_RowChangedName="DTDescuentosSueldoRowChanged" msprop:Generator_RowEvArgName="DTDescuentosSueldoRowChangeEvent" msprop:Generator_RowClassName="DTDescuentosSueldoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="n_descuento" msprop:Generator_ColumnVarNameInTable="columnn_descuento" msprop:Generator_ColumnPropNameInRow="n_descuento" msprop:Generator_ColumnPropNameInTable="n_descuentoColumn" msprop:Generator_UserColumnName="n_descuento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:int" minOccurs="0" />
+              <xs:element name="monto" msprop:Generator_ColumnVarNameInTable="columnmonto" msprop:Generator_ColumnPropNameInRow="monto" msprop:Generator_ColumnPropNameInTable="montoColumn" msprop:Generator_UserColumnName="monto" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

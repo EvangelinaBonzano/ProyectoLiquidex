@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatosReporteAsistencia" targetNamespace="http://tempuri.org/DatosReporteAsistencia.xsd" xmlns:mstns="http://tempuri.org/DatosReporteAsistencia.xsd" xmlns="http://tempuri.org/DatosReporteAsistencia.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_A6901C_LiquidexSAConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_A6901C_LiquidexSAConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ProyectoLiquidexSA.Properties.Settings.GlobalReference.Default.DB_A6901C_LiquidexSAConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TableAdapterListadoAsistencia" GeneratorDataComponentClassName="TableAdapterListadoAsistencia" Name="DTListadoAsistencia" UserDataComponentName="TableAdapterListadoAsistencia">
+            <MainSource>
+              <DbSource ConnectionRef="DB_A6901C_LiquidexSAConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Usuarios.usuario, EstadosAsistencia.n_estados_asistencia, AsistenciaUsuarios.fecha, AsistenciaUsuarios.hora_ingreso, AsistenciaUsuarios.hora_salida
+FROM            AsistenciaUsuarios INNER JOIN
+                         EstadosAsistencia ON AsistenciaUsuarios.id_estado_asistencia = EstadosAsistencia.id_estado_asistencia INNER JOIN
+                         Usuarios ON AsistenciaUsuarios.id_usuario = Usuarios.id_usuario
+WHERE        (AsistenciaUsuarios.borrado = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="usuario" DataSetColumn="usuario" />
+              <Mapping SourceColumn="n_estados_asistencia" DataSetColumn="n_estados_asistencia" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="hora_ingreso" DataSetColumn="hora_ingreso" />
+              <Mapping SourceColumn="hora_salida" DataSetColumn="hora_salida" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DatosReporteAsistencia" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosReporteAsistencia" msprop:Generator_UserDSName="DatosReporteAsistencia">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTListadoAsistencia" msprop:Generator_TableClassName="DTListadoAsistenciaDataTable" msprop:Generator_TableVarName="tableDTListadoAsistencia" msprop:Generator_TablePropName="DTListadoAsistencia" msprop:Generator_RowDeletingName="DTListadoAsistenciaRowDeleting" msprop:Generator_RowChangingName="DTListadoAsistenciaRowChanging" msprop:Generator_RowEvHandlerName="DTListadoAsistenciaRowChangeEventHandler" msprop:Generator_RowDeletedName="DTListadoAsistenciaRowDeleted" msprop:Generator_UserTableName="DTListadoAsistencia" msprop:Generator_RowChangedName="DTListadoAsistenciaRowChanged" msprop:Generator_RowEvArgName="DTListadoAsistenciaRowChangeEvent" msprop:Generator_RowClassName="DTListadoAsistenciaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="n_estados_asistencia" msprop:Generator_ColumnVarNameInTable="columnn_estados_asistencia" msprop:Generator_ColumnPropNameInRow="n_estados_asistencia" msprop:Generator_ColumnPropNameInTable="n_estados_asistenciaColumn" msprop:Generator_UserColumnName="n_estados_asistencia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+              <xs:element name="hora_ingreso" msprop:Generator_ColumnVarNameInTable="columnhora_ingreso" msprop:Generator_ColumnPropNameInRow="hora_ingreso" msprop:Generator_ColumnPropNameInTable="hora_ingresoColumn" msprop:Generator_UserColumnName="hora_ingreso" type="xs:duration" minOccurs="0" />
+              <xs:element name="hora_salida" msprop:Generator_ColumnVarNameInTable="columnhora_salida" msprop:Generator_ColumnPropNameInRow="hora_salida" msprop:Generator_ColumnPropNameInTable="hora_salidaColumn" msprop:Generator_UserColumnName="hora_salida" type="xs:duration" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

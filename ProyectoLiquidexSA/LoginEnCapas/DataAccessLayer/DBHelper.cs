@@ -13,7 +13,8 @@ namespace ProyectoLiquidexSA
         private DBHelper()
         {
             //string_conexion = @"Data Source=ANTONELLA\SQLEXPRESS;Initial Catalog=LiquidexSA;User ID=sa;Password=petroniolmos";
-            string_conexion = @"Data Source = TKC-PC\SQLEXPRESS;Initial Catalog=LiquidexSA; User ID = sa; Password = pavi2020";
+            //string_conexion = @"Data Source=TKC-PC\SQLEXPRESS;Initial Catalog=LiquidexSA;User ID=sa;Password=pavi2020";
+            string_conexion = @"Data Source=sql5097.site4now.net;Initial Catalog=DB_A6901C_LiquidexSA;User ID=DB_A6901C_LiquidexSA_admin;Password=pav12020;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         }
 
         public static DBHelper GetDBHelper()

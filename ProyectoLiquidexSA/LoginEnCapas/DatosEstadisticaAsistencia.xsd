@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DatosEstadisticaAsistencia" targetNamespace="http://tempuri.org/DatosEstadisticaAsistencia.xsd" xmlns:mstns="http://tempuri.org/DatosEstadisticaAsistencia.xsd" xmlns="http://tempuri.org/DatosEstadisticaAsistencia.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DatosEstadisticaAsistencia" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosEstadisticaAsistencia" msprop:Generator_UserDSName="DatosEstadisticaAsistencia">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTEstadisticaAsistencia" msprop:Generator_TableClassName="DTEstadisticaAsistenciaDataTable" msprop:Generator_TableVarName="tableDTEstadisticaAsistencia" msprop:Generator_TablePropName="DTEstadisticaAsistencia" msprop:Generator_RowDeletingName="DTEstadisticaAsistenciaRowDeleting" msprop:Generator_RowChangingName="DTEstadisticaAsistenciaRowChanging" msprop:Generator_RowEvHandlerName="DTEstadisticaAsistenciaRowChangeEventHandler" msprop:Generator_RowDeletedName="DTEstadisticaAsistenciaRowDeleted" msprop:Generator_UserTableName="DTEstadisticaAsistencia" msprop:Generator_RowChangedName="DTEstadisticaAsistenciaRowChanged" msprop:Generator_RowEvArgName="DTEstadisticaAsistenciaRowChangeEvent" msprop:Generator_RowClassName="DTEstadisticaAsistenciaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Usuario" msprop:Generator_ColumnVarNameInTable="columnUsuario" msprop:Generator_ColumnPropNameInRow="Usuario" msprop:Generator_ColumnPropNameInTable="UsuarioColumn" msprop:Generator_UserColumnName="Usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:string" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

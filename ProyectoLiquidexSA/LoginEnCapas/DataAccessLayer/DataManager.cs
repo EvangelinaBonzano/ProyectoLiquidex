@@ -16,7 +16,8 @@ public class DataManager
         // var dataBaseName = ConfigurationManager.AppSettings["dataBaseName"];
         // var string_conexion = ConfigurationManager.ConnectionStrings[dataBaseName].ConnectionString;
         ///dbConnection.ConnectionString = @"Data Source=ANTONELLA\SQLEXPRESS;Initial Catalog=LiquidexSA;User ID=sa;Password=petroniolmos";
-        dbConnection.ConnectionString = @"Data Source=TKC-PC\SQLEXPRESS;Initial Catalog=LiquidexSA;User ID = sa;Password = pavi2020";
+        dbConnection.ConnectionString = @"Data Source=sql5097.site4now.net;Initial Catalog=DB_A6901C_LiquidexSA;User ID=DB_A6901C_LiquidexSA_admin;Password=pav12020;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        //dbConnection.ConnectionString = @"Data Source=TKC-PC\SQLEXPRESS;Initial Catalog=LiquidexSA;User ID=sa;Password=pavi2020";
     }
 
     public void BeginTransaction()

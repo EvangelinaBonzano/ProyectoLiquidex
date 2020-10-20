@@ -12,6 +12,15 @@ using ProyectoLiquidexSA.GUILayer.Asistencia;
 using ProyectoLiquidexSA.GUILayer.Asignaciones;
 using ProyectoLiquidexSA.GUILayer.Descuentos;
 using ProyectoLiquidexSA.GUILayer.Sueldos;
+using ProyectoLiquidexSA.GUILayer.Perfiles;
+using ProyectoLiquidexSA.GUILayer.Reportes;
+using ProyectoLiquidexSA.GUILayer.Reportes.EstadisticaAsistencia;
+using ProyectoLiquidexSA.GUILayer.Reportes.ReporteDescuentosSueldo;
+using ProyectoLiquidexSA.GUILayer.Reportes.EstadisticaDescuentosSueldo;
+using ProyectoLiquidexSA.GUILayer.Reportes.ReporteUsuarios;
+using ProyectoLiquidexSA.GUILayer.Reportes.EstadisticaUsuarios;
+using ProyectoLiquidexSA.GUILayer.Reportes.ReporteSueldoAsignaciones;
+using ProyectoLiquidexSA.GUILayer.Reportes.EstadisticaSueldoAsignaciones;
 
 namespace ProyectoLiquidexSA.GUILayer
 {
@@ -70,6 +79,60 @@ namespace ProyectoLiquidexSA.GUILayer
         {
             frmSueldos frmS = new frmSueldos();
             frmS.ShowDialog();
+        }
+
+        private void perfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPerfiles frmDetalle = new frmPerfiles();
+            frmDetalle.ShowDialog();
+        }
+
+        private void listadoDeAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteListadoAsistencia rep = new frmReporteListadoAsistencia();
+            rep.ShowDialog();
+        }
+
+        private void estadísticaAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaAsistencia frm = new frmEstadisticaAsistencia();
+            frm.ShowDialog();
+        }
+
+        private void descuentosDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteDescuentosSueldo frmSD = new frmReporteDescuentosSueldo();
+            frmSD.ShowDialog();
+        }
+
+        private void estadìsticaDescuentosDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaSueldosDescuento frmESD = new frmEstadisticaSueldosDescuento();
+            frmESD.ShowDialog();
+        }
+
+        private void listadoDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteUsuarios frmUS = new frmReporteUsuarios();
+            frmUS.ShowDialog();
+        }
+
+        private void estadísticaUsuariosXPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaUsuarios frmEUS = new frmEstadisticaUsuarios();
+            frmEUS.ShowDialog();
+        }
+
+        private void asignacionesDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteSueldoAsignaciones sa = new frmReporteSueldoAsignaciones();
+            sa.ShowDialog();
+        }
+
+        private void estadísticaAsignacionesDeSueldosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstadisticaSueldoAsignaciones esa = new frmEstadisticaSueldoAsignaciones();
+            esa.ShowDialog();
         }
     }
 
